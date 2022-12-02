@@ -7,8 +7,23 @@ import { Container } from '@mui/system'
 import NewArticles from '../components/new-articles'
 import TopPageBackGround from '../components/toppage-background'
 import Pickup from '../components/pickup'
+import fs from 'fs';
+import { getArticlesData } from '../lib/article'
 
-export default function Home() {
+export async function getStaticProps() {
+
+  const { allArticles } = getArticlesData();
+  return {
+    props: {
+      allArticles,
+    }
+  };
+}
+
+export default function Home({ allArticles }: any) {
+  const numberNewArticles = -3
+  const newArticlesData = allArticles.slice(numberNewArticles).map((_: any) => _.data);
+
   return (
     <Layout>
 
@@ -28,7 +43,7 @@ export default function Home() {
           }}
           spacing={2}
         >
-          <NewArticles />
+          <NewArticles datas={newArticlesData} />
         </Grid>
         <Pickup />
       </Container>
