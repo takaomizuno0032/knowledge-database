@@ -1,15 +1,13 @@
 {
   "name": "knowledge-database",
   "version": "0.1.0",
-  "homepage": "https://takaomizuno0032.github.io/myknowledge",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -28,5 +26,9 @@
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0",
+    "serve": "^14.1.2"
   }
 }
