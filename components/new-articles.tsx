@@ -18,8 +18,8 @@ export default function NewArticles({ md = 4, newArticles }: Props) {
                     New Articles
                 </Typography>
             </Grid>
-            {newArticles.map((article: any) =>
-                <Grid item xs={12} md={4}>
+            {newArticles.map((article: any, index: number) =>
+                <Grid item xs={12} md={4} key={index}>
                     <Link href={`/articles/${article.data.id}`}>
                         <ArticleProp data={article.data} />
                     </Link>

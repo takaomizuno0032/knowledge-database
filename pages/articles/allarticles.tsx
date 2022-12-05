@@ -54,8 +54,8 @@ function AllArticles({ allArticles }: any) {
                             </Grid>
                             {/* // TODO: articlesをとってくる
                 // the grid container is placed as parent element, so the grid item should be placed. */}
-                            {allArticles.map((article: any) =>
-                                <Grid item xs={12} md={4}>
+                            {allArticles.map((article: any, index: number) =>
+                                <Grid item xs={12} md={4} key={index}>
                                     <Link href={`/articles/${article.data.id}`}>
                                         <ArticleProp data={article.data} />
                                     </Link>
