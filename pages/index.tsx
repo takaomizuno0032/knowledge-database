@@ -22,7 +22,6 @@ export async function getStaticProps() {
 
 export default function Home({ allArticles }: any) {
   const numberNewArticles = -3
-  const newArticlesData = allArticles.slice(numberNewArticles).map((_: any) => _.data);
 
   return (
     <Layout>
@@ -43,7 +42,8 @@ export default function Home({ allArticles }: any) {
           }}
           spacing={2}
         >
-          <NewArticles datas={newArticlesData} />
+          {/* todo: fetch new 3 articles */}
+          <NewArticles newArticles={allArticles} />
         </Grid>
         <Pickup />
       </Container>

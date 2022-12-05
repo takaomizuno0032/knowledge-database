@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 
 function ArticleProp(props: any) {
-    console.log('prop:', props);
     const { data } = props;
     return (<Card variant="outlined">{data.title}</Card>
     );

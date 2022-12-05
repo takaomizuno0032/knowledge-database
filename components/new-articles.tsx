@@ -7,17 +7,10 @@ import React from "react";
 type Props = {
     padding?: number,
     md?: number,
-    datas: {
-        id: number,
-        title: string,
-        date: string,
-        category_id: number,
-        feature: boolean
-    }[]
+    newArticles: any
 }
 
-export default function NewArticles({ md = 4, datas }: Props) {
-    console.log('datas', datas);
+export default function NewArticles({ md = 4, newArticles }: Props) {
     return (
         <>
             <Grid item xs={12}>
@@ -25,13 +18,15 @@ export default function NewArticles({ md = 4, datas }: Props) {
                     New Articles
                 </Typography>
             </Grid>
-            {
-                datas.map((data: any) => {
-                    <Grid item xs={12} md={md}>
-                        <ArticleProp data={data} />
-                    </Grid>
-                })
-            }
+            {newArticles.map((article: any) =>
+                <Grid item xs={12} md={4}>
+                    <Link href={`/articles/${article.data.id}`}>
+                        <ArticleProp data={article.data} />
+                    </Link>
+                </Grid>
+
+            )}
+
 
 
             {/* 基本はdisplay:none. homeの時だけ表示するようにする */}

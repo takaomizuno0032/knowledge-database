@@ -20,6 +20,7 @@ export async function getStaticProps() {
 // TODO: any型を解決する
 function AllArticles({ allArticles }: any) {
     const numberNewArticles = -3
+    console.log("datas:", allArticles);
     const newArticlesData = allArticles.slice(numberNewArticles).map((_: any) => _.data);
 
     return (
@@ -65,7 +66,7 @@ function AllArticles({ allArticles }: any) {
 
                         </Grid>
                     </Grid>
-                    <Grid item sm={12} md={4}>
+                    {/* <Grid item sm={12} md={4}>
                         <Grid
                             container
                             sx={{
@@ -83,7 +84,7 @@ function AllArticles({ allArticles }: any) {
                         >
                             <NewArticles padding={2} md={12} datas={newArticlesData} />
                         </Grid>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Box>
         </Layout>
